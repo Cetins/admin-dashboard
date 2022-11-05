@@ -6,6 +6,8 @@ import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Ecommerce = () => {
+  const {currentColor} = useStateContext();
+  
   return (
     <div className='mt-12'>
 
@@ -20,7 +22,7 @@ const Ecommerce = () => {
             </div>
           </div>       
           <div className='mt-6'>
-            <Button color='white' bgColor='blue' text='Download' borderRadius='10px' size='md' />
+            <Button color='white' bgColor={currentColor} text='Download' borderRadius='10px' size='md' />
           </div>
         </div>
 
@@ -87,13 +89,13 @@ const Ecommerce = () => {
                   height='80px'
                   width='200px'
                   data={SparklineAreaData}
-                  color='blue' />
+                  color={currentColor} />
               </div>
 
               <div className='mt-10'>
                 <Button 
                   color='white' 
-                  bgColor='blue' 
+                  bgColor={currentColor}
                   text='Dowload Report' 
                   borderRadius='10px' />
               </div>
